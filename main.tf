@@ -22,6 +22,10 @@ resource "digitalocean_kubernetes_cluster" "k8s_cluster" {
     name       = "default"
     size       = var.k8s_node_size
     node_count = var.k8s_node_count
+
+    labels = {
+      "priority" = 1
+    }
   }
 }
 
